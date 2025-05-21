@@ -1,9 +1,9 @@
 # Bootstrap Rating Input
 [![CDNJS version](https://img.shields.io/cdnjs/v/bootstrap-rating-input.svg)](https://cdnjs.com/libraries/bootstrap-rating-input)
 
-This is another plugin that eases the generation of rating stars for jQuery and Bootstrap.
+This is another plugin that eases the generation of rating widgets for jQuery and Bootstrap.
 
-It generates widgets like this:
+By default it displays little pandas instead of the traditional stars:
 
 ![Rating example](http://curso-rails-mini-blog.s3.amazonaws.com/rating.png)
 
@@ -22,18 +22,19 @@ If you're using bower to manage your frontend dependencies you can install this 
 Otherwise you can just download `build/bootstrap-rating-input.min.js`, put it wherever you usually put JavaScripts in your project and include it on pages where you want to have forms with ratings:
 
     <script src="path/to/javascripts/bootstrap-rating-input.min.js" type="text/javascript"></script>
+    <link href="path/to/styles/panda-icons.css" rel="stylesheet">
 
 Now add a input of type *number* to your forms and add the class `rating` to it:
 
     <input type="number" name="your_awesome_parameter" id="some_id" class="rating" />
 
-That's all! When page loads, you'll find a few stars where you'd expect to find the input. It works just like most of rating plugins, but for the basic usage you don't need to learn anything else about options or initializations, it just works out of the box.
+That's all! When page loads, you'll find a row of tiny pandas where you'd expect to find the input. It works just like most of rating plugins, but for the basic usage you don't need to learn anything else about options or initializations, it just works out of the box.
 
 ### Wait, where is my input?
 
-The plugin transforms your number input into a hidden field and wraps it inside a `div` (Or a `span` with the inline option) along with the star icons that will catch your clicks and save the selected values into the hidden field. By doing this, the field still exist in your form and can be submitted or its current value read by jQuery normally. Any CSS class in addition to `rating` will be copied to the wrapper for further styling options.
+The plugin transforms your number input into a hidden field and wraps it inside a `div` (Or a `span` with the inline option) along with the panda icons that will catch your clicks and save the selected values into the hidden field. By doing this, the field still exist in your form and can be submitted or its current value read by jQuery normally. Any CSS class in addition to `rating` will be copied to the wrapper for further styling options.
 
-### Nice, but I want to use a different number of stars
+### Nice, but I want to use a different number of pandas
 
 Sure! You can set min and max values adding `data-min` and `data-max`:
 
@@ -53,7 +54,7 @@ You can add the attribute `data-empty-value` to indicate which value should send
 
 By default empty ratings will behave like a regular empty field.
 
-### And what about clearing the stars?
+### And what about clearing the pandas?
 
 By default once you set a value it remains set and you can only change it by another, but you can add a clear link by just defining the `data-clearable` attribute:
 
@@ -61,13 +62,15 @@ By default once you set a value it remains set and you can only change it by ano
 
 The content of `data-clearable` will appear as label for the link. If no value is provided the plugin will display just the clear icon.
 
-You can also add a `data-clearable-remain` attribute to `true` if you'd like the clear link to remain up even when there are no stars selected:
+You can also add a `data-clearable-remain` attribute to `true` if you'd like the clear link to remain up even when there are no pandas selected:
 
     <input class="rating" data-clearable="remove" data-clearable-remain="true" id="some_id" name="your_awesome_parameter" type="number" />
 
-By default the clear link will be hidden whenever no stars are selected.
+By default the clear link will be hidden whenever no pandas are selected.
 
 ### Can I use custom icon classes?
+
+The file `panda-icons.css` included in this repository defines the panda emoji used by default. Feel free to tweak it or replace the classes entirely.
 
 Now you can use custom icons thanks to the awesome contribution by [johncadigan](https://github.com/johncadigan). You can set different icon classes from gliphicons or even load icons from other libraries you're using. For instance here is how you generate a heart rating input with font awesome (You can see it working in the `demo.html` file):
 

@@ -1,0 +1,14 @@
+/* Panda icon library for bootstrap-rating-input */
+.panda {
+  font-style: normal;
+}
+.panda.panda-active::before,
+.panda.panda-inactive::before {
+  content: "\01F43C"; /* panda face emoji */
+}
+.panda.panda-active::before {
+  color: #000;
+}
+.panda.panda-inactive::before {
+  color: #ccc;
+}
